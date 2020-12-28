@@ -1,0 +1,19 @@
+body {
+  background-color:rgb(71, 212, 255);
+  color: black;
+  width: 500px;
+  margin-right: auto;
+  margin-left : auto;
+}
+button {
+  padding: 5px 20px;
+  background-color: tomato;
+  border-style: none;
+}
+#result-area {
+  font-size: 150px;
+}
+#text-area {
+  font-size: 100px;
+  color: darkred;
+}
