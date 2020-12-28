@@ -39,9 +39,8 @@ rouletteButton.onclick = () => {
 
 // ルーレットを停止
 function stop() {
-  if(roulette1) {
     clearInterval(roulette1);
-  }}
+  }
 
 stopButton.onclick = () => {
  stop();
