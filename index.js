@@ -9,6 +9,7 @@ const stopButton = document.getElementById('stop');
 resultDivided.innerText = roulette[0] + roulette[0] + roulette[1];
 let roulette1;
 let result;
+let a = false;
 /**
  * 指定した要素の子どもを全て削除する
  * @param {HTMLElement} element HTMLの要素
@@ -21,17 +22,20 @@ function removeAllChildren(element) {
 }
 //　ルーレットを開始
 function start() {
-  roulette1  = setInterval(function() {
-  let r1 = Math.floor( Math.random() * 100);
-  const i = r1 % roulette.length;
-  let r2 = Math.floor( Math.random() * 100);
-  const j = r2 % roulette.length;
-  let r3 = Math.floor( Math.random() * 100);
-  const k = r3 % roulette.length;
-  result = roulette[i] + roulette[j] + roulette[k];
-  resultDivided.innerText = result;
-  textareaDivided.textContent =　'';
-}, 100);
+  if(a === false){
+    a = true;
+    roulette1  = setInterval(function() {
+    let r1 = Math.floor( Math.random() * 100);
+    const i = r1 % roulette.length;
+    let r2 = Math.floor( Math.random() * 100);
+    const j = r2 % roulette.length;
+    let r3 = Math.floor( Math.random() * 100);
+    const k = r3 % roulette.length;
+    result = roulette[i] + roulette[j] + roulette[k];
+    resultDivided.innerText = result;
+    textareaDivided.textContent =　'';
+  } , 100); 
+}
 }
 rouletteButton.onclick = () => {
  start();
@@ -39,10 +43,12 @@ rouletteButton.onclick = () => {
 
 // ルーレットを停止
 function stop() {
+  if(roulette1){
     clearInterval(roulette1);
-  }
+  }}
 
 stopButton.onclick = () => {
+  a = false;
  stop();
  let n = (result.match( /密/g ) || [] ).length;
  let result2 = n + "密です。";
