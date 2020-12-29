@@ -44,8 +44,8 @@ function stop() {
 
 stopButton.onclick = () => {
  stop();
- let count = (result.match( /密/g ) || [] ).length;
- let result2 = count + "密です。";
+ let n = (result.match( /密/g ) || [] ).length;
+ let result2 = n + "密です。";
  textareaDivided.textContent = result2;
  // TODO ツイートエリアの作成
  removeAllChildren(tweetDivided);
